@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'posts';
 
-  postList = [
+ /* postList = [
     {
       title: 'Mon premier post',
       content: '« Texte » est issu du mot latin « textum », dérivé du verbe « texere » qui signifie « tisser ». Le mot s\'applique à l\'entrelacement des fibres utilisées dans le tissage, voir par exemple Ovide : « Quo super iniecit textum rude sedula Baucis = (un siège) sur lequel Baucis empressée avait jeté un tissu grossier »2 ou au tressage (exemple chez Martial « Vimineum textum = panier d\'osier tressé »). Le verbe a aussi le sens large de construire comme dans « basilicam texere = construire une basilique » chez Cicéron3. ',
@@ -27,7 +28,23 @@ export class AppComponent {
       loveits: 0,
       created_at: new Date()
     },
-  ];
+  ];*/
+
+
+  constructor() {
+    // Initialize Firebase
+    const config = {
+      apiKey: "AIzaSyBH2Yf3iTCL0bWlw_vkPjZQs0I0kZAKfJo",
+      authDomain: "posts-e7e3f.firebaseapp.com",
+      databaseURL: "https://posts-e7e3f.firebaseio.com",
+      projectId: "posts-e7e3f",
+      storageBucket: "",
+      messagingSenderId: "346366692408"
+    };
+    firebase.initializeApp(config);
+  }
+
+
 
 
 }

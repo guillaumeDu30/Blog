@@ -1,7 +1,7 @@
-<app-post-list-item
-  [title]="titleBean"
-  [loveIts]="loveItsBean"
-  [content]="contentBean"
-  [createdAt]="createdAtBean"
-></app-post-list-item>
+
+<div *ngFor="let post of posts, let i = index">
+  <app-post-single [id]="i" >
+  </app-post-single>
+</div>
+
 

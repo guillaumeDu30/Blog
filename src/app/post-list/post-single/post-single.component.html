@@ -1,0 +1,26 @@
+<li [ngClass]="{
+    'list-group-item' : true,
+    'list-group-item-success' : [post['loveIts']] > 0,
+    'list-group-item-danger' : [post['loveIts']] < 0
+}">
+  <div class="d-flex mb-3">
+    <h4 class="mr-auto p-2" [ngStyle]="{color: getColor()}">{{post['title']}}</h4>
+    <span class="font-italic p-2" [ngStyle]="{color: getColor()}">{{post['createdAt']}}</span>
+  </div>
+  <p [ngStyle]="{color: getColor()}">{{post['content']}}</p>
+
+  <div class="d-flex mb-3">
+    <button type="button" class="btn btn-success btn-sm btn-space p-2" (click)="updateLoveIts('add')">Love It
+      !
+    </button>
+
+    <button type="button" class="btn btn-danger btn-sm btn-space p-2" (click)="updateLoveIts('remove')">Don't
+      Love It !
+    </button>
+
+    <button type="button" class="btn btn-danger btn-sm btn-space ml-auto p-2" (click)="onDeletePost()">Supprimer post
+    </button>
+
+
+  </div>
+</li>
